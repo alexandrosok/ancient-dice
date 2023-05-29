@@ -2,7 +2,7 @@ import {User} from '../models/User.model';
 
 const userResolvers = {
     Query: {
-        getUser: async (_: any, {id}: { id: number }) => {
+        getUser: async ({id}: { id: number }) => {
             try {
                 const user = await User.findByPk(id);
                 if (!user) {
